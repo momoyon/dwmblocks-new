@@ -8,7 +8,7 @@ X11LIBS = $(shell pkg-config --libs x11)
 
 all: dwmblocks sigdwmblocks/sigdwmblocks xgetrootname/xgetrootname
 
-dwmblocks: dwmblocks.c config.h block.h
+dwmblocks: dwmblocks.c config.h block.h blocks
 	${CC} -o $@ -Wno-missing-field-initializers -Wno-unused-parameter ${CFLAGS} ${X11CFLAGS} $< ${X11LIBS}
 
 E0BLOCKS = $(abspath blocks)
@@ -32,6 +32,10 @@ sigdwmblocks/sigdwmblocks: sigdwmblocks/sigdwmblocks.c
 xgetrootname/xgetrootname: xgetrootname/xgetrootname.c
 	${CC} -o $@ ${CFLAGS} ${X11CFLAGS} $< ${X11LIBS}
 
+blocks:
+	rm -rf blocks; cp -rf blocks.def blocks
+
+
 clean:
 	rm -f dwmblocks sigdwmblocks/sigdwmblocks xgetrootname/xgetrootname
 
@@ -49,4 +53,4 @@ uninstall:
 	rm -f ${BINDIR}/dwmblocks ${BINDIR}/sigdwmblocks ${BINDIR}/xgetrootname
 	rm -df ${PIDDIR} || exit 0
 
-.PHONY: all clean install uninstall
+.PHONY: all clean install uninstall blocks
