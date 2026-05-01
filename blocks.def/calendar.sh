@@ -1,3 +1,2 @@
 #!/bin/sh
-ICON=""
-printf "$ICON%s" "$(date '+%a, %b %d, %R')"
+printf "\x0c$(date '+%a, %b %d %Y, %r')\x0b"
