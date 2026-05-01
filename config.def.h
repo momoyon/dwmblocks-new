@@ -48,6 +48,7 @@ static Block blocks[] = {
         { PATH("volume.pipewire.sh"),   PATH("volume_button.sh"),       0,              2},
         { PATH("mem.sh"),               NULL,                           2,              0},
         { PATH("wlan.sh"),              PATH("wlan_button.sh"),         5,              7},
+        { PATH("nettraf.sh"),           NULL,                           1,              0},
         { PATH("calendar.sh"),          NULL,                           1,              1},
         { PATH("battery.sh"),           PATH("battery_button.sh"),      30,             3},
         { NULL } /* just to mark the end of the array */
