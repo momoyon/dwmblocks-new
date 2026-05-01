@@ -3,7 +3,6 @@
 
 /* buffer size for capturing output of the programs used for updating blocks */
 #define CMDOUTLENGTH                    50
-
 /* DELIMITERENDCHAR must be less than 32.
  * At max, DELIMITERENDCHAR - 1 number of clickable blocks are allowed.
  * Raw characters larger than DELIMITERENDCHAR and smaller than ' ' in ASCII
@@ -43,10 +42,10 @@ static const char delimiter[] = { ' ', ' ', ' ', DELIMITERENDCHAR };
 
 static Block blocks[] = {
 /*      pathu                           pathc                           interval        signal */
-        { PATH("cpu.sh"),               NULL,                           1,              5},
+        { PATH("cpu.sh"),               PATH("cpu_button.sh"),          1,              5},
+        { PATH("cpu_temp.sh"),          NULL,                           1,              4},
         { PATH("calendar.sh"),          NULL,                           1,              1},
         { PATH("volume.pipewire.sh"),   PATH("volume_button.sh"),       0,              2},
-        { PATH("cpu_temp.sh"),          PATH("cpu_temp_button.sh"),     1,              4},
         { PATH("battery.sh"),           PATH("battery_button.sh"),      30,             3},
         { NULL } /* just to mark the end of the array */
 };
