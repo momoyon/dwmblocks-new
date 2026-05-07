@@ -1,5 +1,6 @@
 /* macro for conveniently specifying pathu and pathc below */
 #define PATH(name)                      "<path to the folder containing block scripts>/"name
+#define SCRIPT(name)                    "/home/momoyon/.scripts/"name
 
 /* buffer size for capturing output of the programs used for updating blocks */
 #define CMDOUTLENGTH                    50
@@ -42,6 +43,7 @@ static const char delimiter[] = { ' ', ' ', ' ', DELIMITERENDCHAR };
 
 static Block blocks[] = {
 /*      pathu                           pathc                           interval        signal */
+        { SCRIPT("musicplaying"),       NULL,                           1,              9},
         { PATH("song.sh"),              PATH("song_button.sh"),         0,              8},
         { PATH("cpu.sh"),               PATH("cpu_button.sh"),          1,              5},
         { PATH("cpu_temp.sh"),          NULL,                           1,              0},
